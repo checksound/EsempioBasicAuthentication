@@ -26,4 +26,20 @@ Per fare il *logout* necessario cancellare i dati di navigazione del browser.
 
 ## Utility
 
+Codifica in Base64: `npm run encode <username> <password>`
+
+Esempio: `npm run encode pippo pluto`
+
+Decodifica di Base64: `npm run decode <base66string>`
+
+Esempio: `npm run decode cGlwcG86cGx1dG8=`
+
+Per avere l'hash della password in modo da non averle in chiaro, utilizzando bcrypt:
+
+`npm run hash <password>`
+
+Ad esempio: `npm run hash paperino`
+
+
+
 

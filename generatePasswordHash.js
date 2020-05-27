@@ -6,9 +6,11 @@ console.log('argomenti: ', myArgs);
 const bcrypt = require('bcrypt');
 var salt = bcrypt.genSaltSync(10);
 
-bcrypt.hash('secret', salt, function(err, hash) {
-    if(err)
-        console.log(err);
-    console.log(hash);
-  });
+myArgs.forEach( (argument) => {
+    bcrypt.hash(argument, salt, function(err, hash) {
+        if(err)
+            console.log(err);
+        console.log(argument + ' -->> ' + hash);
+    });
+});
 

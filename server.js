@@ -3,7 +3,6 @@
 const Bcrypt = require('bcrypt');
 const Hapi = require('@hapi/hapi');
 
-// $2b$10$zuTKwNXh1f7YYWv/isExnuAST3Imh6.2UuLInXgbmIRzHmlaWS6U2
 const users = {
     john: {
         username: 'john',
@@ -19,8 +18,6 @@ const validate = async (request, username, password) => {
     if (!user) {
         return { credentials: null, isValid: false };
     }
-
-    console.log(password);
 
     const isValid = await Bcrypt.compare(password, user.password);
     const credentials = { id: user.id, name: user.name };
